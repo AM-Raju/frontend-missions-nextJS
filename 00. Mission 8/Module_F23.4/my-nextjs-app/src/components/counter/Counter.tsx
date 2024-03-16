@@ -6,8 +6,8 @@ const Counter = () => {
     return (
         <div>
             <p>Counter: {counter}</p>
-      <button className='border px-3 py-1' onClick={()=> setCounter(counter+1)}>Increase</button>
-      <button className='border px-3 py-1' onClick={()=> setCounter(counter-1)}>Decrease</button>
+      <button  className='btn btn-accent' onClick={()=> setCounter(counter+1)}>Increase</button>
+      <button className='btn btn-accent' onClick={()=> setCounter(counter-1)}>Decrease</button>
         </div>
     );
 };
