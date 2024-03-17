@@ -1,5 +1,7 @@
-import Image from "next/image";
-import React from "react";
+export const metadata = {
+  title: "Home page",
+  description: "This is home page",
+};
 
 const HomePage = () => {
   return (
