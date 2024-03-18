@@ -5,6 +5,8 @@ const AllShoesPage = async () => {
     cache: "no-store",
   });
   const shoes = await res.json();
+
+  throw new Error("Error from All Shoes Page");
   return (
     <div className="max-w-7xl mx-auto">
       <h1 className="text-4xl text-center mb-10">All Shoes</h1>
