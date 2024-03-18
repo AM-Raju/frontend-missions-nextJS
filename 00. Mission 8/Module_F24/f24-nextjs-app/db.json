@@ -4,19 +4,19 @@
       "id": 1,
       "title": "Men's Running Shoes",
       "description": "High-performance running shoes designed for maximum comfort and support. Suitable for both casual jogs and competitive races.",
-      "price": 89.99
+      "price": 250.99
     },
     {
       "id": 2,
       "title": "Women's Trail Hiking Boots",
       "description": "Durable hiking boots designed specifically for rugged terrain. Waterproof and breathable materials ensure comfort on long hikes.",
-      "price": 109.95
+      "price": 205.95
     },
     {
       "id": 3,
       "title": "Kids' Soccer Cleats",
       "description": "Soccer cleats for young athletes. Lightweight design with enhanced traction for quick movements on the field.",
-      "price": 49.99
+      "price": 100.99
     },
     {
       "id": 4,
