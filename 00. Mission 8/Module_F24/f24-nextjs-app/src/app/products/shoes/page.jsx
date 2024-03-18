@@ -1,5 +1,7 @@
 const ShoesPage = async () => {
-  const res = await fetch("http://localhost:5000/shoes");
+  const res = await fetch("http://localhost:5000/shoes", {
+    cache: "force-cache",
+  });
   const shoes = await res.json();
 
   return (
@@ -15,12 +17,16 @@ const ShoesPage = async () => {
           <div className="card-body">
             <h2 className="card-title">
               {shoe.title}
-              <div className="badge badge-secondary">NEW</div>
+              <div className="badge badge-secondary">${shoe.price}</div>
             </h2>
             <p>{shoe?.description}</p>
             <div className="card-actions justify-end">
-              <div className="badge badge-outline">${shoe?.price}</div>
-              <div className="badge badge-outline">Products</div>
+              <button className="btn btn-outline btn-primary px-5">
+                Fashion
+              </button>
+              <button className="btn btn-outline btn-primary px-5">
+                Details
+              </button>
             </div>
           </div>
         </div>
