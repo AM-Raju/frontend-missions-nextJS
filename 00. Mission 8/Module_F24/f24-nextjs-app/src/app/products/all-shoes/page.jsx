@@ -1,17 +1,15 @@
-import Link from "next/link";
+import React from "react";
 
-const ShoesPage = async () => {
+const AllShoesPage = async () => {
   const res = await fetch("http://localhost:5000/shoes", {
-    next: {
-      revalidate: 30,
-    },
+    cache: "no-store",
   });
   const shoes = await res.json();
-
   return (
-    <div>
-      <div className="flex justify-around max-w-7xl mx-auto">
-        {shoes.slice(0, 3).map((shoe) => (
+    <div className="max-w-7xl mx-auto">
+      <h1 className="text-4xl text-center mb-10">All Shoes</h1>
+      <div className="grid grid-cols-3 gap-4">
+        {shoes.map((shoe) => (
           <div key={shoe?.id} className="card w-96 bg-base-100 shadow-xl">
             <figure>
               <img
@@ -37,13 +35,8 @@ const ShoesPage = async () => {
           </div>
         ))}
       </div>
-      <div className="text-center my-10">
-        <Link href="/products/all-shoes">
-          <button className="btn btn-outline btn-primary px-5">See More</button>
-        </Link>
-      </div>
     </div>
   );
 };
 
-export default ShoesPage;
+export default AllShoesPage;
