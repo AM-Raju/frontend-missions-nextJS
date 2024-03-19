@@ -1,6 +1,8 @@
 import BlogCard from "@/components/ui/BlogCard";
 import { IBlog } from "@/types/index.types";
 
+
+
 const BlogsPage = async () => {
   const res = await fetch("http://localhost:5000/blogs", {
     cache: "no-store",
