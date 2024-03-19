@@ -6,7 +6,7 @@ import BlogCard from '../ui/BlogCard';
 const LatestBlogs = ({blogs}: {blogs: IBlog[]}) => {
     return (
         <div>
-            <h1 className='text-4xl text-center font-semibold mt-10 mb-5'>Latest Blogs <span className='text-accent'>Blogiz</span> </h1>
+            <h1 className='text-4xl text-center font-semibold mt-10 mb-5'>Latest Blogs From <span className='text-accent'>Blogiz</span> </h1>
             <p className='text-gray-400 text-center w-1/4 mx-auto'>
                 <i>
                     Dive into the fascinating world of quantum computing, where unlocking unprecedented computational power.
