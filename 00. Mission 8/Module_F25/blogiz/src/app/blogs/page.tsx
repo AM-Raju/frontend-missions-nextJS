@@ -1,13 +1,19 @@
+"use client";
 import BlogCard from "@/components/ui/BlogCard";
+import { useGetBlogsQuery } from "@/redux/features/blogs/blogApi";
+import { useAppDispatch } from "@/redux/hook";
 import { IBlog } from "@/types/index.types";
 
-
-
-const BlogsPage = async () => {
-  const res = await fetch("http://localhost:5000/blogs", {
+const BlogsPage = () => {
+  /*  const res = await fetch("http://localhost:5000/blogs", {
     cache: "no-store",
   });
-  const blogs = await res.json();
+
+  const blogs = await res.json(); */
+
+  const { data: blogs } = useGetBlogsQuery("");
+  console.log(blogs);
+
   return (
     <div>
       <h1 className="text-4xl text-center font-semibold mt-10 mb-5">
@@ -20,7 +26,7 @@ const BlogsPage = async () => {
         </i>
       </p>
       <div className="grid grid-cols-3 gap-4 w-[70%] mx-auto my-5">
-        {blogs.map((blog: IBlog) => (
+        {blogs?.map((blog: IBlog) => (
           <BlogCard key={blog.id} blog={blog}></BlogCard>
         ))}
       </div>
