@@ -1,6 +1,11 @@
+import { Session } from "next-auth";
 import Link from "next/link";
 
-const Navbar = () => {
+type TNavbarProps = {
+  session: Session | null;
+};
+
+const Navbar = ({ session }: TNavbarProps) => {
   return (
     <div className="navbar bg-base-100  border-b  w-[90%] mx-auto">
       <div className="navbar-start">
