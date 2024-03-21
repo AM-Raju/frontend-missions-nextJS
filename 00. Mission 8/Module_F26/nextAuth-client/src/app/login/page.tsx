@@ -1,10 +1,12 @@
 "use client";
+import { loginUser } from "@/utils/action/loginUser";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
-type FormValues = {
+export type FormValues = {
   email: string;
   password: string;
 };
@@ -16,8 +18,22 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
+  const router = useRouter();
+
   const onSubmit = async (data: FormValues) => {
     console.log(data);
+
+    try {
+      const res = await loginUser(data);
+      // console.log(res);
+      if (res.accessToken) {
+        alert(res.message);
+        localStorage.setItem("access-token", res.accessToken);
+        router.push("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
