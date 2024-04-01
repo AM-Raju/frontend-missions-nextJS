@@ -1,0 +1,70 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\.e112e29b57925d83d18e8f8ec38ad53b9874587b-audit.json",
+    "files": [
+        {
+            "date": 1711712282959,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-29-03-17-error.log",
+            "hash": "ea0a275d91a274cdbbfe55e4fa95faa2a7ebd5f336d03ccbb1e6a99c93ceeab3"
+        },
+        {
+            "date": 1711713602481,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-29-03-18-error.log",
+            "hash": "f2e2b8b52b0d6e2b0a89cb79055a60eac077655685ec125b542b6453ab0a8c6b"
+        },
+        {
+            "date": 1711744922214,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-02-error.log",
+            "hash": "2ff0907ed632e976d3b91d4bfe1e40c4e19784ba928a717148f087981466c5e2"
+        },
+        {
+            "date": 1711746002160,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-03-error.log",
+            "hash": "fcd51390339d32bbd5bb337cb8f4aa38ae8eec7791ae17f89fbc520c419f1b0c"
+        },
+        {
+            "date": 1711752842242,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-04-error.log",
+            "hash": "5ecb159a7e270d0ed0ebc5f4a87148908fa6c01f2588cfed441ca18e03ff8204"
+        },
+        {
+            "date": 1711753202431,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-05-error.log",
+            "hash": "f3b36de0c8ee81eb4b7651aca8c33340bc81a1afb7c8755654c60a2b91e3b355"
+        },
+        {
+            "date": 1711756802794,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-06-error.log",
+            "hash": "b0ee1f60d82fdb90b8db8ca3c4b3b2e5e4b31b5abea0801325f2d21f99c4d07c"
+        },
+        {
+            "date": 1711760702533,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-07-error.log",
+            "hash": "4d1c4d2b199688a9ac7b446e38bfa20751599741730e697d6cd2296520b51d3b"
+        },
+        {
+            "date": 1711764002481,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-08-error.log",
+            "hash": "1834c8648a58617d5cd293dd196ca4090185f70936bea8ee73f58e59ae6943c2"
+        },
+        {
+            "date": 1711789483884,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-30-03-15-error.log",
+            "hash": "a0ed7a707b79231cab4554056379655f53d952d4f8c544ad0339cb452222078b"
+        },
+        {
+            "date": 1711834481158,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-31-03-03-error.log",
+            "hash": "e6cceb7aea16a46bdc28e83e039e7764bca74ce31a9e096eb0253950c879049f"
+        },
+        {
+            "date": 1711853671161,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\errors\\phu-2024-31-03-08-error.log",
+            "hash": "76286b29e79f2d7ad1262dff922ec30b8dc493ad738a47322851c8846f8b542f"
+        }
+    ],
+    "hashType": "sha256"
+}

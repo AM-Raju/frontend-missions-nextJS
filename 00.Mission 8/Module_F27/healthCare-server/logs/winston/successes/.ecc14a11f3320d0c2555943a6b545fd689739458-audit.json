@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\.ecc14a11f3320d0c2555943a6b545fd689739458-audit.json",
+    "files": [
+        {
+            "date": 1711712282944,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\phu-2024-29-03-17-success.log",
+            "hash": "c28acd53d086d7c77bd153e4568c3289dbfd0c5ed75678a6caf60a46d005d040"
+        },
+        {
+            "date": 1711764976468,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\phu-2024-30-03-08-success.log",
+            "hash": "0121b07c7651863e183d979f572bda6de0e4c716ae8e6f29743f3ea35d8df0d4"
+        },
+        {
+            "date": 1711789483854,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\phu-2024-30-03-15-success.log",
+            "hash": "d8c5f1c1dd81ea895c4ac80b73d6d2c709bc1485e5945e59ca0919afda42e54a"
+        },
+        {
+            "date": 1711834481151,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\phu-2024-31-03-03-success.log",
+            "hash": "79300e007b4497ef4403d50b6984feeb24966eb95c5ad5c7cf0ab411d361169d"
+        },
+        {
+            "date": 1711853671105,
+            "name": "J:\\00.PH\\00.Programming Hero-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\phu-2024-31-03-08-success.log",
+            "hash": "870a14bb34d028a7d6899b5ccb2f34ef93ee96558ff202bb84dd216ed631189b"
+        }
+    ],
+    "hashType": "sha256"
+}
