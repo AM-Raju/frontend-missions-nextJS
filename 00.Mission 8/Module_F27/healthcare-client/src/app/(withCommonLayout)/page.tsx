@@ -1,11 +1,11 @@
-import { Button } from "@mui/material";
+import { Button, Container } from "@mui/material";
 
 const HomePage = () => {
   return (
-    <div>
+    <Container>
       <h1>This is homepage</h1>
       <Button variant="outlined">Text</Button>
-    </div>
+    </Container>
   );
 };
 
