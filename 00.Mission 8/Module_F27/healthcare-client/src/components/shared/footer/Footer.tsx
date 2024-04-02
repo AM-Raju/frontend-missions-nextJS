@@ -52,13 +52,13 @@ const Footer = () => {
           ></Image>
         </Stack>
         {/* Border */}
-        <div style={{ border: "1px dashed white" }}></div>
+        <Box sx={{ border: "1px dashed white" }} my={5}></Box>
         {/* Footer Bottom */}
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="space-between"
-          py={5}
+          py={2}
         >
           <Typography color="#fff">
             &copy;PH HealthCare. All Right Reserved
