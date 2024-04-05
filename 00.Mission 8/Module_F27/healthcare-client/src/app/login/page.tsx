@@ -12,10 +12,9 @@ import Image from "next/image";
 import assets from "@/assets";
 import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
-// import { userLogin } from "@/services/actions/userLogin";
-// import { storeUserInfo } from "@/services/auth.services";
-// import { toast } from "sonner";
-import { Router } from "next/router";
+import { userLogin } from "@/services/actions/userLogin";
+import { storeUserInfo } from "@/services/auth.services";
+import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 export type FormValues = {
