@@ -8,10 +8,10 @@ import {
 
 type TPHFromProps = {
   children: ReactNode;
-  onSubmit: SubmitHandler<FieldValues>;
+  formDataHandlerFn: SubmitHandler<FieldValues>;
 };
 
-const PHForm = ({ onSubmit: formDataHandlerFn, children }: TPHFromProps) => {
+const PHForm = ({ formDataHandlerFn, children }: TPHFromProps) => {
   const methods = useForm();
   const { handleSubmit } = methods;
 

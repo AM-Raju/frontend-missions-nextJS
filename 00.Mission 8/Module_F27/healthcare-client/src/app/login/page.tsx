@@ -17,18 +17,13 @@ import { storeUserInfo } from "@/services/auth.services";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import PHForm from "@/components/form/PHForm";
+import PHInput from "@/components/form/PHInput";
 
 const LoginPage = () => {
   const router = useRouter();
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<FieldValues>();
 
   const handleLogin = async (values: FieldValues) => {
-    // console.log(values);
+    console.log("login", values);
     try {
       const res = await userLogin(values);
       if (res?.data?.accessToken) {
@@ -76,26 +71,23 @@ const LoginPage = () => {
             </Box>
           </Stack>
           <Box>
-            <PHForm onSubmit={handleLogin}>
+            <PHForm formDataHandlerFn={handleLogin}>
               <Grid container spacing={2} my={1}>
                 <Grid item md={6}>
-                  <TextField
+                  <PHInput
                     label="Email"
                     type="email"
-                    variant="outlined"
-                    size="small"
                     fullWidth={true}
-                    {...register("email")}
+                    name="email"
                   />
                 </Grid>
                 <Grid item md={6}>
-                  <TextField
+                  <PHInput
                     label="Password"
                     type="password"
-                    variant="outlined"
                     size="small"
                     fullWidth={true}
-                    {...register("password")}
+                    name="password"
                   />
                 </Grid>
               </Grid>
