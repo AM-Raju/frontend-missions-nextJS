@@ -1,3 +1,4 @@
+import { TResolver } from "@/types/index.types";
 import React, { ReactNode } from "react";
 import {
   FieldValues,
@@ -9,10 +10,16 @@ import {
 type TPHFromProps = {
   children: ReactNode;
   formDataHandlerFn: SubmitHandler<FieldValues>;
-};
+} & TResolver;
 
-const PHForm = ({ formDataHandlerFn, children }: TPHFromProps) => {
-  const methods = useForm();
+const PHForm = ({ formDataHandlerFn, children, resolver }: TPHFromProps) => {
+  const formConfig: TResolver = {};
+
+  if (resolver) {
+    formConfig["resolver"] = resolver;
+  }
+
+  const methods = useForm(formConfig);
   const { handleSubmit } = methods;
 
   const handleFormData: SubmitHandler<FieldValues> = (data) => {
