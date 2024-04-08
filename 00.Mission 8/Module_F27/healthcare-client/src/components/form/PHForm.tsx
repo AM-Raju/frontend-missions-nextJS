@@ -1,4 +1,4 @@
-import { TFormConfig } from "@/types/index.types";
+import { TFormConfig } from "@/types";
 import React, { ReactNode } from "react";
 import {
   FieldValues,
