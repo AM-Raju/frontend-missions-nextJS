@@ -29,7 +29,7 @@ const Sidebar = () => {
       </Stack>
       <List>
         {drawerItems("admin" as TUserRole).map((item, index) => (
-          <SidebarItems item={item} index={index} key={index}></SidebarItems>
+          <SidebarItems item={item} key={index}></SidebarItems>
         ))}
       </List>
     </Box>
