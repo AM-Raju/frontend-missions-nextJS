@@ -94,7 +94,7 @@ export const drawerItems = (role: TUserRole): IDrawerItem[] => {
         {
           title: "Prescriptions",
           path: `${role}/prescriptions`,
-          icon: DashboardIcon,
+          icon: MedicalInformationIcon,
         },
         {
           title: "Payment History",
