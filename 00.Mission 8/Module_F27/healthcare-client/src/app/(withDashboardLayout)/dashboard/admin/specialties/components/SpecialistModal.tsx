@@ -1,7 +1,11 @@
 "use client";
+import PHFileUploader from "@/components/form/PHFileUploader";
+import PHForm from "@/components/form/PHForm";
+import PHInput from "@/components/form/PHInput";
 import PHModal from "@/components/shared/phModal/PHModal";
-import { TextField } from "@mui/material";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import { Button, Grid } from "@mui/material";
+import React, { Dispatch, SetStateAction } from "react";
+import { FieldValues } from "react-hook-form";
 
 type TSpecialistModalProps = {
   open: boolean;
@@ -9,9 +13,22 @@ type TSpecialistModalProps = {
 };
 
 const SpecialistModal = ({ open, setOpen }: TSpecialistModalProps) => {
+  const handleFormSubmit = (values: FieldValues) => {};
   return (
     <PHModal open={open} setOpen={setOpen} title={"Create Specialist"}>
-      <TextField></TextField>
+      <PHForm formDataHandlerFn={handleFormSubmit}>
+        <Grid container spacing={2}>
+          <Grid item md={6}>
+            <PHInput name="title" label="Title" />
+          </Grid>
+          <Grid item md={6}>
+            <PHFileUploader name="file" label="Upload File" />
+          </Grid>
+        </Grid>
+        <Button sx={{ mt: 1 }} type="submit">
+          Create
+        </Button>
+      </PHForm>
     </PHModal>
   );
 };

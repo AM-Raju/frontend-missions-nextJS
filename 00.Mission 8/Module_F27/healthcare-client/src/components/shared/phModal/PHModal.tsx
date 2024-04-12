@@ -8,7 +8,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import Typography from "@mui/material/Typography";
 
 export const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -28,10 +27,11 @@ type TPHModalProps = {
 };
 
 export default function PHModal({
-  open,
+  open = false,
   setOpen,
-  title,
+  title = " ",
   children,
+  sx,
 }: TPHModalProps) {
   const handleClose = () => {
     setOpen(false);
@@ -43,6 +43,7 @@ export default function PHModal({
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
+        sx={{ ...sx }}
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
           {title}
