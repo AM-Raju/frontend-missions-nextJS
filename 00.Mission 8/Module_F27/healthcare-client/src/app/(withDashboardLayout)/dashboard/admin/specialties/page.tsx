@@ -1,13 +1,18 @@
-import PHModal from "@/components/shared/phModal/PHModal";
+"use client";
 import { Box, Button, Stack, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import SpecialistModal from "./components/SpecialistModal";
 
 const SpecialtiesPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Button>Create Specialty</Button>
-        <PHModal></PHModal>
+        <Button onClick={() => setIsModalOpen(true)}>Create Specialist</Button>
+        <SpecialistModal
+          open={isModalOpen}
+          setOpen={setIsModalOpen}
+        ></SpecialistModal>
         <TextField size="small" placeholder="Search Specialist" />
       </Stack>
     </Box>
