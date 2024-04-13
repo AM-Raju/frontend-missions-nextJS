@@ -13,7 +13,9 @@ type TSpecialistModalProps = {
 };
 
 const SpecialistModal = ({ open, setOpen }: TSpecialistModalProps) => {
-  const handleFormSubmit = (values: FieldValues) => {};
+  const handleFormSubmit = (values: FieldValues) => {
+    console.log(values);
+  };
   return (
     <PHModal open={open} setOpen={setOpen} title={"Create Specialist"}>
       <PHForm formDataHandlerFn={handleFormSubmit}>
@@ -21,6 +23,7 @@ const SpecialistModal = ({ open, setOpen }: TSpecialistModalProps) => {
           <Grid item md={6}>
             <PHInput name="title" label="Title" />
           </Grid>
+          {/* File Uploader */}
           <Grid item md={6}>
             <PHFileUploader name="file" label="Upload File" />
           </Grid>

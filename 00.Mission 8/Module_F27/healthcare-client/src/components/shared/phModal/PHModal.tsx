@@ -61,11 +61,11 @@ export default function PHModal({
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>{children}</DialogContent>
-        <DialogActions>
+        {/* <DialogActions>
           <Button autoFocus onClick={handleClose}>
             Save changes
           </Button>
-        </DialogActions>
+        </DialogActions> */}
       </BootstrapDialog>
     </React.Fragment>
   );

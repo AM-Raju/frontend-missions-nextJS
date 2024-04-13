@@ -32,7 +32,7 @@ const PHForm = ({
   const { handleSubmit } = methods;
 
   const handleFormData: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+    // console.log(data);
     formDataHandlerFn(data);
   };
   return (
