@@ -2,17 +2,29 @@
 import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
 import SpecialistModal from "./components/SpecialistModal";
-import { useGetAllSpecialtiesQuery } from "@/redux/api/specialitiesApi";
+import {
+  useDeleteSpecialtyMutation,
+  useGetAllSpecialtiesQuery,
+} from "@/redux/api/specialitiesApi";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Image from "next/image";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { toast } from "sonner";
 
 const SpecialtiesPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const { data, isLoading } = useGetAllSpecialtiesQuery({});
+  const [deleteSpecialty] = useDeleteSpecialtyMutation({});
 
   const handleDelete = async (id: string) => {
-    console.log(id);
+    try {
+      const res = await deleteSpecialty(id).unwrap();
+      if (res?.id) {
+        toast.success("Specialty deleted successfully!!!");
+      }
+    } catch (err: any) {
+      console.error(err.message);
+    }
   };
 
   const columns: GridColDef[] = [
