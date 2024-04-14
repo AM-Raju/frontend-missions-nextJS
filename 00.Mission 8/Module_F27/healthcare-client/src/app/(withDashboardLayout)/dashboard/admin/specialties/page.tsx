@@ -3,11 +3,23 @@ import { Box, Button, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
 import SpecialistModal from "./components/SpecialistModal";
 import { useGetAllSpecialtiesQuery } from "@/redux/api/specialitiesApi";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const SpecialtiesPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const { data, isLoading } = useGetAllSpecialtiesQuery({});
-  console.log("specialties page", data);
+
+  const columns: GridColDef[] = [
+    { field: "title", headerName: "Title", width: 400 },
+    {
+      field: "icon",
+      headerName: "Icon",
+      flex: 1,
+      renderCell: ({ row }) => {
+        return console.log(row);
+      },
+    },
+  ];
 
   return (
     <Box>
@@ -19,6 +31,13 @@ const SpecialtiesPage = () => {
         ></SpecialistModal>
         <TextField size="small" placeholder="Search Specialist" />
       </Stack>
+      {!isLoading ? (
+        <Box my={2}>
+          <DataGrid rows={data} columns={columns} hideFooter={true} />
+        </Box>
+      ) : (
+        <h1>Loading.....</h1>
+      )}
     </Box>
   );
 };
