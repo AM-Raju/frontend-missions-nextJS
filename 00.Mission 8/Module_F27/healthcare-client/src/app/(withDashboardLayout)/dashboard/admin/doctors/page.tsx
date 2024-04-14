@@ -1,10 +1,18 @@
-import React from "react";
+"use client";
+import { Box, Button, Stack, TextField } from "@mui/material";
+import React, { useState } from "react";
+import DoctorModal from "./components/DoctorModal";
 
 const DoctorsPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   return (
-    <div>
-      <h1>This is doctors page</h1>
-    </div>
+    <Box>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Button onClick={() => setIsModalOpen(true)}>Create New Doctor</Button>
+        <TextField size="small" placeholder="search doctors" />
+        <DoctorModal open={isModalOpen} setOpen={setIsModalOpen} />
+      </Stack>
+    </Box>
   );
 };
 
