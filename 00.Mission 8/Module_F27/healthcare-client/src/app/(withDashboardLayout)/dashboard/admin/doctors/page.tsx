@@ -10,6 +10,7 @@ import {
 } from "@/redux/api/doctorApi";
 import { useDebounced } from "@/redux/hook";
 import { toast } from "sonner";
+import { IDoctor } from "@/types";
 
 const DoctorsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -28,7 +29,7 @@ const DoctorsPage = () => {
   const [deleteDoctor] = useDeleteDoctorMutation();
 
   // console.log(data);
-  const doctors = data?.doctors;
+  const doctors: IDoctor[] | undefined = data?.doctors;
   const meta = data?.meta;
   // console.log(doctors);
 
@@ -79,7 +80,7 @@ const DoctorsPage = () => {
       </Stack>
       {!isLoading ? (
         <Box my={2}>
-          <DataGrid rows={doctors} columns={columns} />
+          <DataGrid rows={doctors as IDoctor[]} columns={columns} />
         </Box>
       ) : (
         <h1>Loading.....</h1>
