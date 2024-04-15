@@ -9,6 +9,9 @@ import { useGetAllDoctorsQuery } from "@/redux/api/doctorApi";
 const DoctorsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const query: Record<string, any> = {};
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  query["searchTerm"] = searchTerm;
   const { data, isLoading } = useGetAllDoctorsQuery({ ...query });
 
   // console.log(data);
@@ -45,7 +48,11 @@ const DoctorsPage = () => {
     <Box>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Button onClick={() => setIsModalOpen(true)}>Create New Doctor</Button>
-        <TextField size="small" placeholder="search doctors" />
+        <TextField
+          onChange={(e) => setSearchTerm(e.target.value)}
+          size="small"
+          placeholder="search doctors"
+        />
         <DoctorModal open={isModalOpen} setOpen={setIsModalOpen} />
       </Stack>
       {!isLoading ? (
