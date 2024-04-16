@@ -2,6 +2,7 @@ import PHDatePicker from "@/components/form/PHDatePicker";
 import PHForm from "@/components/form/PHForm";
 import PHTimePicker from "@/components/form/PHTimePicker";
 import PHModal from "@/components/shared/phModal/PHModal";
+import { useCreateScheduleMutation } from "@/redux/api/scheduleApi";
 import { dateFormatter } from "@/utils/dateFormatter";
 import { timeFormatter } from "@/utils/timeFormatter";
 import { Button, Grid } from "@mui/material";
@@ -14,7 +15,7 @@ type TProps = {
 };
 
 const ScheduleModal = ({ open, setOpen }: TProps) => {
-  //   const [createSchedule] = useCreateScheduleMutation();
+  const [createSchedule] = useCreateScheduleMutation();
 
   const handleFormSubmit = async (values: FieldValues) => {
     // console.log(values);
@@ -23,7 +24,7 @@ const ScheduleModal = ({ open, setOpen }: TProps) => {
     values.startTime = timeFormatter(values.startTime);
     values.endTime = timeFormatter(values.endTime);
     // console.log(values);
-    /*    try {
+    try {
       const res = await createSchedule(values).unwrap();
       // console.log(res);
       if (res?.length) {
@@ -32,7 +33,7 @@ const ScheduleModal = ({ open, setOpen }: TProps) => {
       }
     } catch (err: any) {
       console.error(err.message);
-    } */
+    }
   };
 
   return (
