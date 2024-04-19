@@ -11,6 +11,8 @@ import {
 import { useDebounced } from "@/redux/hook";
 import { toast } from "sonner";
 import { IDoctor } from "@/types";
+import Link from "next/link";
+import EditIcon from "@mui/icons-material/Edit";
 
 const DoctorsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -29,7 +31,7 @@ const DoctorsPage = () => {
   const [deleteDoctor] = useDeleteDoctorMutation();
 
   // console.log(data);
-  const doctors: IDoctor[] | undefined = data?.doctors;
+  const doctors = data?.doctors;
   const meta = data?.meta;
   // console.log(doctors);
 
@@ -60,9 +62,19 @@ const DoctorsPage = () => {
       align: "center",
       renderCell: ({ row }) => {
         return (
-          <IconButton onClick={() => handleDelete(row.id)} aria-label="delete">
-            <DeleteIcon />
-          </IconButton>
+          <Box>
+            <IconButton
+              onClick={() => handleDelete(row.id)}
+              aria-label="delete"
+            >
+              <DeleteIcon sx={{ color: "red" }} />
+            </IconButton>
+            <Link href={`/dashboard/admin/doctors/edit/${row.id}`}>
+              <IconButton aria-label="delete">
+                <EditIcon />
+              </IconButton>
+            </Link>
+          </Box>
         );
       },
     },
