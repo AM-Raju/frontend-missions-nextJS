@@ -1,8 +1,11 @@
 import PHModal from "@/components/shared/phModal/PHModal";
+import { useGetAllSchedulesQuery } from "@/redux/api/scheduleApi";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+
 import dayjs, { Dayjs } from "dayjs";
-import React from "react";
+import React, { useState } from "react";
+import MultipleSelectFieldChip from "./MultipleSelectFieldChip";
 
 type TProps = {
   open: boolean;
@@ -15,6 +18,26 @@ const DoctorScheduleModal = ({ open, setOpen }: TProps) => {
   );
 
   //   console.log(selectedDate);
+  const [selectedScheduleIds, setSelectedScheduleIds] = useState<string[]>([]);
+
+  const query: Record<string, any> = {};
+
+  if (!!selectedDate) {
+    query["startDate"] = dayjs(selectedDate)
+      .hour(0)
+      .minute(0)
+      .millisecond(0)
+      .toISOString();
+    query["endDate"] = dayjs(selectedDate)
+      .hour(23)
+      .minute(59)
+      .millisecond(999)
+      .toISOString();
+  }
+
+  const { data } = useGetAllSchedulesQuery(query);
+  const schedules = data?.schedules;
+  console.log(schedules);
 
   return (
     <PHModal open={open} setOpen={setOpen} title="Create Doctor Schedule">
@@ -27,6 +50,7 @@ const DoctorScheduleModal = ({ open, setOpen }: TProps) => {
           }
         />
       </LocalizationProvider>
+      <MultipleSelectFieldChip schedules={schedules}></MultipleSelectFieldChip>
     </PHModal>
   );
 };
