@@ -8,7 +8,6 @@ import { dateFormatter } from "@/utils/dateFormatter";
 import dayjs from "dayjs";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 
 const SchedulesPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -49,9 +48,6 @@ const SchedulesPage = () => {
           <Box>
             <IconButton aria-label="delete">
               <DeleteIcon sx={{ color: "red" }} />
-            </IconButton>
-            <IconButton aria-label="delete">
-              <EditIcon sx={{}} />
             </IconButton>
           </Box>
         );

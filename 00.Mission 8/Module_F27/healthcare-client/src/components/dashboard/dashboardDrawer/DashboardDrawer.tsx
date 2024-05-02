@@ -21,6 +21,7 @@ import { useGetSingleUserQuery } from "@/redux/api/userApi";
 import { Avatar, Badge, Stack } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountMenu from "../acountMenu/AcountMenu";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const drawerWidth = 240;
 
@@ -105,7 +106,16 @@ export default function DashboardDrawer({
                   <NotificationsNoneIcon color="action" />
                 </IconButton>
               </Badge>
-              <Avatar alt={data?.name} src={data?.profilePhoto} />
+              <Avatar
+                alt={data?.name}
+                src={
+                  data?.profilePhoto ? (
+                    data?.profilePhoto
+                  ) : (
+                    <AccountCircleIcon />
+                  )
+                }
+              />
               <AccountMenu />
             </Stack>
           </Box>
