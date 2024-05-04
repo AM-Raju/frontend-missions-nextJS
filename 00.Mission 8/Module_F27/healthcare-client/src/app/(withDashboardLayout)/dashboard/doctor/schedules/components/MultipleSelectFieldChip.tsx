@@ -44,16 +44,18 @@ export default function MultipleSelectFieldChip({
   selectedScheduleIds,
   setSelectedScheduleIds,
 }: any) {
-  console.log(schedules);
-
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState<string[]>([]);
+  //   const [personName, setPersonName] = React.useState<string[]>([]);
 
-  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+  //   //   console.log(personName);
+
+  const handleChange = (
+    event: SelectChangeEvent<typeof selectedScheduleIds>
+  ) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
+    setSelectedScheduleIds(
       // On autofill we get a stringified value.
       typeof value === "string" ? value.split(",") : value
     );
@@ -61,13 +63,18 @@ export default function MultipleSelectFieldChip({
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-chip-label">Schedules</InputLabel>
+      <FormControl sx={{ width: 300 }}>
+        <InputLabel
+          sx={{ backgroundColor: "white", paddingRight: 1 }}
+          id="demo-multiple-chip-label"
+        >
+          Schedules
+        </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
           multiple
-          value={personName}
+          value={selectedScheduleIds}
           onChange={handleChange}
           input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
           renderValue={(selected) => {
@@ -95,7 +102,7 @@ export default function MultipleSelectFieldChip({
             <MenuItem
               key={schedule?.id}
               value={schedule?.id}
-              style={getStyles(schedule?.id, personName, theme)}
+              style={getStyles(schedule?.id, selectedScheduleIds, theme)}
             >
               {`${getTimeIn12HourFormat(
                 schedule.startDate

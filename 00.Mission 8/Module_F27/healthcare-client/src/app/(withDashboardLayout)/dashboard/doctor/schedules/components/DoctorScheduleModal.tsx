@@ -3,9 +3,12 @@ import { useGetAllSchedulesQuery } from "@/redux/api/scheduleApi";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import React, { useState } from "react";
 import MultipleSelectFieldChip from "./MultipleSelectFieldChip";
+import { Stack } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
+import { useCreateDoctorScheduleMutation } from "@/redux/api/doctorScheduleApi";
 
 type TProps = {
   open: boolean;
@@ -37,20 +40,51 @@ const DoctorScheduleModal = ({ open, setOpen }: TProps) => {
 
   const { data } = useGetAllSchedulesQuery(query);
   const schedules = data?.schedules;
-  console.log(schedules);
+
+  const [createDoctorSchedule, { isLoading }] =
+    useCreateDoctorScheduleMutation();
+
+  const onSubmit = async () => {
+    try {
+      const res = await createDoctorSchedule({
+        scheduleIds: selectedScheduleIds,
+      });
+      console.log(res);
+      setOpen(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <PHModal open={open} setOpen={setOpen} title="Create Doctor Schedule">
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
-          label="Controlled picker"
-          value={dayjs(selectedDate)}
-          onChange={(newValue) =>
-            setSelectedDate(dayjs(newValue).toISOString())
-          }
-        />
-      </LocalizationProvider>
-      <MultipleSelectFieldChip schedules={schedules}></MultipleSelectFieldChip>
+      <Stack direction={"column"} gap={2}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            sx={{ width: "100%" }}
+            label="Controlled picker"
+            value={dayjs(selectedDate)}
+            onChange={(newValue) =>
+              setSelectedDate(dayjs(newValue).toISOString())
+            }
+          />
+        </LocalizationProvider>
+
+        <MultipleSelectFieldChip
+          schedules={schedules}
+          selectedScheduleIds={selectedScheduleIds}
+          setSelectedScheduleIds={setSelectedScheduleIds}
+        ></MultipleSelectFieldChip>
+        <LoadingButton
+          size="small"
+          onClick={onSubmit}
+          loading={isLoading}
+          loadingIndicator="Submitting..."
+          variant="contained"
+        >
+          <span>Fetch data</span>
+        </LoadingButton>
+      </Stack>
     </PHModal>
   );
 };
