@@ -10,7 +10,7 @@ import { errorlogger } from './shared/logger';
 
 const app: Application = express();
 
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(cookieParser());
 
 //parser
@@ -32,7 +32,7 @@ cron.schedule('* * * * *', async (): Promise<void> => {
   } catch (error) {
     errorlogger.error(error);
   }
-})
+});
 
 //global error handler
 app.use(globalErrorHandler);

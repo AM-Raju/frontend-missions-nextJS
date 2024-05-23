@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "J:\\00.PH\\00.PH-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\.7fbd315525dc8f862bd61e2ae7d57e4215c4166a-audit.json",
+    "files": [
+        {
+            "date": 1716457112429,
+            "name": "J:\\00.PH\\00.PH-L2-Frontend\\00.Frontend-Misssions-NextJS\\00.Mission 8\\Module_F27\\healthCare-server\\logs\\winston\\successes\\phu-2024-23-05-15-success.log",
+            "hash": "e949b31f8d5dea472db6824a6d144eca668cc768dd3fa0ff02df8fb84f877b16"
+        }
+    ],
+    "hashType": "sha256"
+}
