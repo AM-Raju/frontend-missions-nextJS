@@ -5,15 +5,21 @@ import { TMeta } from "@/types";
 export const doctorScheduleApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     createDoctorSchedule: build.mutation({
-      query: (data) => ({
-        url: "/doctor-schedule",
-        method: "POST",
-        data,
-      }),
+      query: (data) => {
+        // console.log(data);
+
+        return {
+          url: "/doctor-schedule",
+          method: "POST",
+          data,
+        };
+      },
       invalidatesTags: [tagTypes.doctorSchedule],
     }),
     getAllDoctorSchedules: build.query({
       query: (arg: Record<string, any>) => {
+        console.log(arg);
+
         return {
           url: "/doctor-schedule",
           method: "GET",
@@ -28,6 +34,7 @@ export const doctorScheduleApi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.doctorSchedule],
     }),
+
     getDoctorSchedule: build.query({
       query: (id: string | string[] | undefined) => ({
         url: `/doctor-schedule/${id}`,
@@ -35,6 +42,7 @@ export const doctorScheduleApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.doctorSchedule],
     }),
+
     getMySchedule: build.query({
       query: () => ({
         url: "/doctor-schedule/my-schedules",

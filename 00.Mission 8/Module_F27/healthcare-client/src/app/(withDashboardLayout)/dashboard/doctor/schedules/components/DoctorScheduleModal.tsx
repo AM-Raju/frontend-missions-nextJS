@@ -82,7 +82,7 @@ const DoctorScheduleModal = ({ open, setOpen }: TProps) => {
           loadingIndicator="Submitting..."
           variant="contained"
         >
-          <span>Fetch data</span>
+          <span>Submit</span>
         </LoadingButton>
       </Stack>
     </PHModal>
